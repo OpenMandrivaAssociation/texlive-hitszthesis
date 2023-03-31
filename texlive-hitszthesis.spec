@@ -1,6 +1,6 @@
 Name:		texlive-hitszthesis
 Version:	61073
-Release:	1
+Release:	2
 Summary:	A dissertation template for Harbin Institute of Technology, ShenZhen
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/hitszthesis
