@@ -3,7 +3,7 @@ Version:	61073
 Release:	2
 Summary:	A dissertation template for Harbin Institute of Technology, ShenZhen
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/hitszthesis
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/hitszthesis
 License:	lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hitszthesis.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hitszthesis.doc.r%{version}.tar.xz
