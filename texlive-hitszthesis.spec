@@ -1,42 +1,23 @@
-Name:		texlive-hitszthesis
-Version:	61073
-Release:	2
+%global tl_name hitszthesis
+%global tl_revision 61073
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	3.2.1
+Release:	%{tl_revision}.1
 Summary:	A dissertation template for Harbin Institute of Technology, ShenZhen
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/hitszthesis
 License:	lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hitszthesis.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hitszthesis.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hitszthesis.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/hitszthesis.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/hitszthesis.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/hitszthesis.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides a dissertation template for Harbin
-Institute of Technology, ShenZhen (HITSZ), including bachelor,
-master and doctor dissertations.
+This package provides a dissertation template for Harbin Institute of
+Technology, ShenZhen (HITSZ), including bachelor, master and doctor
+dissertations.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/hitszthesis
-%{_texmfdistdir}/tex/latex/hitszthesis
-%{_texmfdistdir}/makeindex/hitszthesis
-%{_texmfdistdir}/bibtex/bst/hitszthesis
-%doc %{_texmfdistdir}/doc/latex/hitszthesis
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
